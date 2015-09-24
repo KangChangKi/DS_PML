@@ -105,8 +105,6 @@ summary(training)
 I'm going to split the data into training data and testing data with proportion of 6:4.
 
 ```{r}
-#training <- sample_n(training, 200)  # remove this later
-
 InTrain <- createDataPartition(y=training$classe, p=0.6, list=FALSE)
 training_1 <- training[InTrain, ]
 training_2 <- training[-InTrain, ]

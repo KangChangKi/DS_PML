@@ -362,9 +362,7 @@ summary(training)</code></pre>
 <div id="spliting-data" class="section level2">
 <h2>Spliting Data</h2>
 <p>I’m going to split the data into training data and testing data with proportion of 6:4.</p>
-<pre class="r"><code>#training &lt;- sample_n(training, 200)  # remove this later
-
-InTrain &lt;- createDataPartition(y=training$classe, p=0.6, list=FALSE)
+<pre class="r"><code>InTrain &lt;- createDataPartition(y=training$classe, p=0.6, list=FALSE)
 training_1 &lt;- training[InTrain, ]
 training_2 &lt;- training[-InTrain, ]</code></pre>
 </div>
@@ -373,17 +371,8 @@ training_2 &lt;- training[-InTrain, ]</code></pre>
 <p>I chose the prediction method as random forest and the training option as cross validation with 5 folds. Random forest algorithm is known to have good performance, so it is default algorithm in <code>train</code> function by the way.</p>
 <pre class="r"><code>fit_model &lt;- train(classe ~ ., data=training_1, method=&quot;rf&quot;,
                    trControl=trainControl(method=&quot;cv&quot;, number=5),
-                   allowParallel=TRUE, verbose=FALSE)</code></pre>
-<pre><code>## Loading required package: randomForest
-## randomForest 4.6-10
-## Type rfNews() to see new features/changes/bug fixes.
-## 
-## Attaching package: 'randomForest'
-## 
-## The following object is masked from 'package:dplyr':
-## 
-##     combine</code></pre>
-<pre class="r"><code>print(fit_model)</code></pre>
+                   allowParallel=TRUE, verbose=FALSE)
+print(fit_model)</code></pre>
 <pre><code>## Random Forest 
 ## 
 ## 11776 samples
