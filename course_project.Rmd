@@ -137,7 +137,7 @@ fit_test = predict(fit_model, training_2)
 confusionMatrix(training_2$classe, fit_test)
 ```
 
-Checking the confusion matrix, the accuracy is 0.9916 and it's 95% confidence interval is $[0.9893,\ 0.9935]$, which is quite good performance. So 95% confidence interval of out of sample error rate will be $[0.0065,\ 0.0107]$.
+Checking the confusion matrix, the accuracy is 0.9916 and it's 95% confidence interval is $[0.9893,\ 0.9935]$, which is quite good performance. So the out of sample error rate will be 0.0084 and 95% confidence interval of out of sample error rate will be $[0.0065,\ 0.0107]$.
 
 ## Prediction
 
